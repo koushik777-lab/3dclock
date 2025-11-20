@@ -1,0 +1,116 @@
+:root {
+  --neon-green: #39ff14;
+  --neon-yellow: #fff01f;
+  --dark-bg: #0a0a0a;
+  --panel-bg: rgba(20, 20, 20, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--neon-green);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  overflow: hidden;
+}
+
+.clock-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+}
+
+.nav-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--glass-border);
+  z-index: 10;
+}
+
+.nav-item {
+  cursor: pointer;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  color: rgba(255, 255, 255, 0.5);
+  border: 1px solid transparent;
+}
+
+.nav-item:hover {
+  color: var(--neon-yellow);
+  text-shadow: 0 0 5px var(--neon-yellow);
+}
+
+.nav-item.active {
+  color: var(--neon-green);
+  border-color: var(--neon-green);
+  box-shadow: 0 0 10px var(--neon-green), inset 0 0 10px rgba(57, 255, 20, 0.2);
+  text-shadow: 0 0 8px var(--neon-green);
+}
+
+.content-area {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Common Utility Classes */
+.neon-text-green {
+  color: var(--neon-green);
+  text-shadow: 0 0 5px var(--neon-green), 0 0 10px var(--neon-green);
+}
+
+.neon-text-yellow {
+  color: var(--neon-yellow);
+  text-shadow: 0 0 5px var(--neon-yellow), 0 0 10px var(--neon-yellow);
+}
+
+.glass-panel {
+  background: var(--panel-bg);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--glass-border);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.btn-neon {
+  background: transparent;
+  border: 1px solid var(--neon-green);
+  color: var(--neon-green);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s;
+  text-transform: uppercase;
+}
+
+.btn-neon:hover {
+  background: var(--neon-green);
+  color: black;
+  box-shadow: 0 0 15px var(--neon-green);
+}
+
+.btn-neon.yellow {
+  border-color: var(--neon-yellow);
+  color: var(--neon-yellow);
+}
+
+.btn-neon.yellow:hover {
+  background: var(--neon-yellow);
+  color: black;
+  box-shadow: 0 0 15px var(--neon-yellow);
+}
