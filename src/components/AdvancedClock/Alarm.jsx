@@ -76,7 +76,7 @@ const Alarm = ({ alarms, addAlarm, toggleAlarm, deleteAlarm, editAlarm }) => {
         <div ref={containerRef} className="alarm-container" style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', overflow: 'hidden' }}>
 
             {/* 3D Viewport */}
-            <div className="stagger-entry" style={{ width: '100%', height: '300px', position: 'relative', marginBottom: '1rem' }}>
+            <div className="stagger-entry" style={{ width: '100%', height: 'clamp(200px, 30vh, 300px)', position: 'relative', marginBottom: '1rem' }}>
                 <Canvas camera={{ position: [0, 0, 6], fov: 45 }}>
                     <ambientLight intensity={0.5} />
                     <pointLight position={[10, 10, 10]} intensity={1} />
@@ -86,13 +86,13 @@ const Alarm = ({ alarms, addAlarm, toggleAlarm, deleteAlarm, editAlarm }) => {
                 </Canvas>
             </div>
 
-            <div ref={formRef} className="stagger-entry glass-panel" style={{ display: 'flex', gap: '1rem', marginBottom: '2rem', padding: '1.5rem', width: '100%', maxWidth: '500px', border: '1px solid transparent' }}>
+            <div ref={formRef} className="stagger-entry glass-panel" style={{ display: 'flex', gap: '0.75rem', marginBottom: '2rem', padding: 'clamp(1rem, 3vw, 1.5rem)', width: '100%', maxWidth: '500px', border: '1px solid transparent', flexWrap: 'wrap' }}>
                 <input
                     type="time"
                     value={newAlarmTime}
                     onChange={(e) => setNewAlarmTime(e.target.value)}
                     className="neon-input"
-                    style={{ flex: 1, fontSize: '1.2rem' }}
+                    style={{ flex: '1 1 120px', fontSize: 'clamp(1rem, 3vw, 1.2rem)', minWidth: '120px' }}
                 />
                 <input
                     type="text"
@@ -100,9 +100,9 @@ const Alarm = ({ alarms, addAlarm, toggleAlarm, deleteAlarm, editAlarm }) => {
                     value={newAlarmName}
                     onChange={(e) => setNewAlarmName(e.target.value)}
                     className="neon-input"
-                    style={{ flex: 1 }}
+                    style={{ flex: '1 1 120px', minWidth: '120px' }}
                 />
-                <button onClick={handleAddAlarm} className="btn-neon" style={{ minWidth: '80px' }}>
+                <button onClick={handleAddAlarm} className="btn-neon" style={{ minWidth: '80px', flex: '0 0 auto' }}>
                     <Plus size={20} /> Add
                 </button>
             </div>
@@ -153,11 +153,11 @@ const Alarm = ({ alarms, addAlarm, toggleAlarm, deleteAlarm, editAlarm }) => {
                                     </div>
                                 ) : (
                                     <>
-                                        <span className="neon-text-green" style={{ fontSize: '1.5rem', fontWeight: 'bold', opacity: alarm.active ? 1 : 0.5 }}>
+                                        <span className="neon-text-green" style={{ fontSize: 'clamp(1.2rem, 4vw, 1.5rem)', fontWeight: 'bold', opacity: alarm.active ? 1 : 0.5 }}>
                                             {formatTo12Hour(alarm.time)}
                                         </span>
-                                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.9rem' }}>{alarm.name}</span>
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+                                            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: 'clamp(0.8rem, 2.5vw, 0.9rem)' }}>{alarm.name}</span>
                                             <button onClick={() => startEditing(alarm)} className="btn-icon" style={{ opacity: 0.5 }}>
                                                 <Edit2 size={14} />
                                             </button>

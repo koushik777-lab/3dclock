@@ -114,3 +114,150 @@ body {
   color: black;
   box-shadow: 0 0 15px var(--neon-yellow);
 }
+
+/* Input Styles */
+.neon-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  color: var(--neon-green);
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.neon-input:focus {
+  outline: none;
+  border-color: var(--neon-green);
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+}
+
+.btn-icon {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  transition: all 0.2s;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-icon:hover {
+  color: var(--neon-green);
+  transform: scale(1.1);
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  body {
+    overflow-y: auto;
+  }
+
+  .clock-container {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  /* Navigation Tabs - Mobile Optimized */
+  .nav-tabs {
+    gap: 0.5rem;
+    padding: 0.75rem 0.5rem;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .nav-item {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    min-width: auto;
+  }
+
+  .nav-item span {
+    gap: 0.3rem !important;
+  }
+
+  .nav-item svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  /* Content Area - Mobile Optimized */
+  .content-area {
+    padding: 0.5rem;
+    overflow-y: auto;
+    min-height: calc(100vh - 80px);
+  }
+
+  /* Glass Panel - Mobile Optimized */
+  .glass-panel {
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  /* Buttons - Touch Friendly */
+  .btn-neon {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+
+  .btn-icon {
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Input Fields - Touch Friendly */
+  .neon-input {
+    padding: 0.6rem;
+    font-size: 1rem;
+    min-height: 44px;
+  }
+
+  /* Typography Scaling */
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .neon-text-green,
+  .neon-text-yellow {
+    font-size: 0.9em;
+  }
+}
+
+/* Extra Small Devices (phones in portrait) */
+@media (max-width: 480px) {
+  .nav-tabs {
+    gap: 0.3rem;
+    padding: 0.5rem 0.25rem;
+  }
+
+  .nav-item {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.7rem;
+  }
+
+  .glass-panel {
+    padding: 0.75rem;
+  }
+
+  .btn-neon {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+}

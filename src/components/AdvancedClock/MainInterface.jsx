@@ -200,7 +200,7 @@ export const MainInterface = () => {
                         className="glass-panel"
                         initial={{ scale: 0.5, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
-                        style={{ textAlign: 'center', padding: '3rem' }}
+                        style={{ textAlign: 'center', padding: 'clamp(1.5rem, 5vw, 3rem)', maxWidth: '90vw', margin: '0 1rem' }}
                     >
                         <motion.div
                             animate={{ rotate: [0, -10, 10, -10, 10, 0] }}
@@ -208,7 +208,7 @@ export const MainInterface = () => {
                         >
                             <Bell size={64} color="var(--neon-green)" />
                         </motion.div>
-                        <h2 className="neon-text-green" style={{ fontSize: '3rem', margin: '1rem 0' }}>
+                        <h2 className="neon-text-green" style={{ fontSize: 'clamp(2rem, 8vw, 3rem)', margin: '1rem 0' }}>
                             {(() => {
                                 const [hours, minutes] = triggeredAlarm.time.split(':');
                                 let h = parseInt(hours, 10);
@@ -218,8 +218,8 @@ export const MainInterface = () => {
                                 return `${h}:${minutes} ${ampm}`;
                             })()}
                         </h2>
-                        <p className="neon-text-yellow" style={{ fontSize: '1.5rem' }}>{triggeredAlarm.name}</p>
-                        <button className="btn-neon" onClick={dismissAlarm} style={{ marginTop: '2rem', fontSize: '1.2rem' }}>Dismiss</button>
+                        <p className="neon-text-yellow" style={{ fontSize: 'clamp(1.2rem, 4vw, 1.5rem)' }}>{triggeredAlarm.name}</p>
+                        <button className="btn-neon" onClick={dismissAlarm} style={{ marginTop: '2rem', fontSize: 'clamp(1rem, 3vw, 1.2rem)' }}>Dismiss</button>
                     </motion.div>
                 </div>
             )}
