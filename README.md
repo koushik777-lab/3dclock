@@ -2,9 +2,14 @@
 
 A modern, feature-rich clock application with stunning 3D visualizations, built with React, Three.js, and GSAP animations. Fully responsive and optimized for both desktop and mobile devices.
 
+## 🌐 Live Demo
+
+**[🚀 View Live Demo](https://clockmoja.netlify.app/)**
+
 ![3D Clock App](https://img.shields.io/badge/React-19.2.0-61DAFB?style=for-the-badge&logo=react&logoColor=white)
 ![Three.js](https://img.shields.io/badge/Three.js-0.181.2-000000?style=for-the-badge&logo=three.js&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-7.2.2-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/deployed/netlify)](https://clockmoja.netlify.app/)
 
 ## ✨ Features
 
